@@ -152,24 +152,24 @@ src/
 │   └── emailsLogs.middleware.js
 │   └── smsLogs.middleware.js
 ├── routes/
-│   └── oportunities.route.js
-│   └── employees.route.js
-│   └── users.route.js
-│   └── solutions.route.js
-│   └── areas.route.js
-│   └── logs.route.js
-│   └── farmFields.route.js
-│   └── farmSquare.route.js
-│   └── positions.route.js
-│   └── lines.route.js
-│   └── varieties.route.js
-│   └── plants.route.js
-│   └── groove.route.js
-│   └── departments.route.js
-│   └── payments.route.js
-│   └── orders.route.js
-│   └── emailsLogs.route.js
-│   └── smsLogs.route.js
+│   └── oportunities.routes.js
+│   └── employees.routes.js
+│   └── users.routes.js
+│   └── solutions.routes.js
+│   └── areas.routes.js
+│   └── logs.routes.js
+│   └── farmFields.routes.js
+│   └── farmSquare.routes.js
+│   └── positions.routes.js
+│   └── lines.routes.js
+│   └── varieties.routes.js
+│   └── plants.routes.js
+│   └── groove.routes.js
+│   └── departments.routes.js
+│   └── payments.routes.js
+│   └── orders.routes.js
+│   └── emailsLogs.routes.js
+│   └── smsLogs.routes.js
 ├── tests/
 │   └── oportunities.test.js
 │   └── employees.test.js
@@ -448,25 +448,12 @@ Basic CRUD Example :
 
 ```js
 //ROUTES
-router.use('/api', [oportunitiesRoutes])
-router.use('/api', [employeesRoutes])
-router.use('/api', [usersRoutes])
-router.use('/api', [solutionsRoutes])
-router.use('/api', [areasRoutes])
-router.use('/api', [logsRoutes])
-router.use('/api', [farmFieldsRoutes])
-router.use('/api', [farmSquareRoutes])
-router.use('/api', [positionsRoutes])
-router.use('/api', [linesRoutes])
-router.use('/api', [varietiesRoutes])
-router.use('/api', [plantsRoutes])
-router.use('/api', [grooveRoutes])
-router.use('/api', [departmentsRoutes])
-router.use('/api', [deparmentsRoutes])
-router.use('/api', [paymentsRoutes])
-router.use('/api', [ordersRoutes])
-router.use('/api', [emailsLogsRoutes])
-router.use('/api', [smsLogsRoutes])
+//EXAMPLE OF EMPLOYEES ROUTES
+router.get('/employees', employeesController.index)
+router.post('/employees', employeesController.store)
+router.get('/employees/:id', employeesController.show)
+router.put('/employees/:id', employeesController.update)
+router.delete('/employees/:id', employeesController.destroy)
 ```
 
 ```js
