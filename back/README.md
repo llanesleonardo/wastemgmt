@@ -5,7 +5,7 @@
   </a>
 
   <p align="center">
-    This is a practice repo using a typeORM with node.js
+    This is a dev repo using a typeORM with node.js
     <br>
     <a href="https://github.com/llanesleonardo/api-empleados/issues">Report bug</a>
     ·
@@ -132,6 +132,25 @@ src/
 │   └── orders.helper.js
 │   └── emailsLogs.helper.js
 │   └── smsLogs.helper.js
+├── validations/
+│   └── oportunities.validations.js
+│   └── employees.validations.js
+│   └── users.validations.js
+│   └── solutions.validations.js
+│   └── areas.validations.js
+│   └── logs.validations.js
+│   └── farmFields.validations.js
+│   └── farmSquare.validations.js
+│   └── positions.validations.js
+│   └── lines.validations.js
+│   └── varieties.validations.js
+│   └── plants.validations.js
+│   └── groove.validations.js
+│   └── departments.validations.js
+│   └── payments.validations.js
+│   └── orders.validations.js
+│   └── emailsLogs.validations.js
+│   └── smsLogs.validations.js
 ├── middleware/
 │   └── oportunities.middleware.js
 │   └── employees.middleware.js
@@ -192,6 +211,10 @@ src/
 └── index.js
 └── app.js
 └── router.js
+└── .babelrc
+└── .prettierrc
+└── DcokerFile.dev
+└── ormconfig.json
 ```
 
 ## Technologies
