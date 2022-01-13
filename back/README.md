@@ -65,7 +65,6 @@ src/
 │   └── oportunities.model.js
 ├── services/
 │   └── oportunities.service.js
-
 ├── helpers/
 │   └── oportunities.helper.js
 ├── validations/
