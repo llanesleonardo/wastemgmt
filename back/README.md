@@ -58,156 +58,21 @@ src/
 │   └── errors.js
 ├── controllers/
 │   └── oportunities.controller.js
-│   └── employees.controller.js
-│   └── users.controller.js
-│   └── solutions.controller.js
-│   └── areas.controller.js
-│   └── logs.controller.js
-│   └── farmFields.controller.js
-│   └── farmSquare.controller.js
-│   └── positions.controller.js
-│   └── lines.controller.js
-│   └── varieties.controller.js
-│   └── plants.controller.js
-│   └── groove.controller.js
-│   └── departments.controller.js
-│   └── payments.controller.js
-│   └── orders.controller.js
-│   └── emailsLogs.controller.js
-│   └── smsLogs.controller.js
 ├── models/
 │   └── oportunities.model.js
-│   └── employees.model.js
-│   └── users.model.js
-│   └── solutions.model.js
-│   └── areas.model.js
-│   └── logs.model.js
-│   └── farmFields.model.js
-│   └── farmSquare.model.js
-│   └── positions.model.js
-│   └── lines.model.js
-│   └── varieties.model.js
-│   └── plants.model.js
-│   └── groove.model.js
-│   └── departments.model.js
-│   └── payments.model.js
-│   └── orders.model.js
-│   └── emailsLogs.model.js
-│   └── smsLogs.model.js
 ├── services/
 │   └── oportunities.service.js
-│   └── employees.service.js
-│   └── users.service.js
-│   └── solutions.service.js
-│   └── areas.service.js
-│   └── logs.service.js
-│   └── farmFields.service.js
-│   └── farmSquare.service.js
-│   └── positions.service.js
-│   └── lines.service.js
-│   └── varieties.service.js
-│   └── plants.service.js
-│   └── groove.service.js
-│   └── departments.service.js
-│   └── payments.service.js
-│   └── orders.service.js
-│   └── emailsLogs.service.js
-│   └── smsLogs.service.js
+
 ├── helpers/
 │   └── oportunities.helper.js
-│   └── employees.helper.js
-│   └── users.helper.js
-│   └── solutions.helper.js
-│   └── areas.helper.js
-│   └── logs.helper.js
-│   └── farmFields.helper.js
-│   └── farmSquare.helper.js
-│   └── positions.helper.js
-│   └── lines.helper.js
-│   └── varieties.helper.js
-│   └── plants.helper.js
-│   └── groove.helper.js
-│   └── departments.helper.js
-│   └── payments.helper.js
-│   └── orders.helper.js
-│   └── emailsLogs.helper.js
-│   └── smsLogs.helper.js
 ├── validations/
 │   └── oportunities.validations.js
-│   └── employees.validations.js
-│   └── users.validations.js
-│   └── solutions.validations.js
-│   └── areas.validations.js
-│   └── logs.validations.js
-│   └── farmFields.validations.js
-│   └── farmSquare.validations.js
-│   └── positions.validations.js
-│   └── lines.validations.js
-│   └── varieties.validations.js
-│   └── plants.validations.js
-│   └── groove.validations.js
-│   └── departments.validations.js
-│   └── payments.validations.js
-│   └── orders.validations.js
-│   └── emailsLogs.validations.js
-│   └── smsLogs.validations.js
 ├── middleware/
 │   └── oportunities.middleware.js
-│   └── employees.middleware.js
-│   └── users.middleware.js
-│   └── solutions.middleware.js
-│   └── areas.middleware.js
-│   └── logs.middleware.js
-│   └── farmFields.middleware.js
-│   └── farmSquare.middleware.js
-│   └── positions.middleware.js
-│   └── lines.middleware.js
-│   └── varieties.middleware.js
-│   └── plants.middleware.js
-│   └── groove.middleware.js
-│   └── departments.middleware.js
-│   └── payments.middleware.js
-│   └── orders.middleware.js
-│   └── emailsLogs.middleware.js
-│   └── smsLogs.middleware.js
 ├── routes/
 │   └── oportunities.routes.js
-│   └── employees.routes.js
-│   └── users.routes.js
-│   └── solutions.routes.js
-│   └── areas.routes.js
-│   └── logs.routes.js
-│   └── farmFields.routes.js
-│   └── farmSquare.routes.js
-│   └── positions.routes.js
-│   └── lines.routes.js
-│   └── varieties.routes.js
-│   └── plants.routes.js
-│   └── groove.routes.js
-│   └── departments.routes.js
-│   └── payments.routes.js
-│   └── orders.routes.js
-│   └── emailsLogs.routes.js
-│   └── smsLogs.routes.js
 ├── tests/
 │   └── oportunities.test.js
-│   └── employees.test.js
-│   └── users.test.js
-│   └── solutions.test.js
-│   └── areas.test.js
-│   └── logs.test.js
-│   └── farmFields.test.js
-│   └── farmSquare.test.js
-│   └── positions.test.js
-│   └── lines.test.js
-│   └── varieties.test.js
-│   └── plants.test.js
-│   └── groove.test.js
-│   └── departments.test.js
-│   └── payments.test.js
-│   └── orders.test.js
-│   └── emailsLogs.test.js
-│   └── smsLogs.test.js
 └── index.js
 └── app.js
 └── router.js
@@ -245,7 +110,7 @@ A list of technologies used within the project:
 
 ---
 
-Create your .env file :
+### Create your .env file :
 
 ```
 MONGO_DB_HOST=localhost
@@ -256,7 +121,7 @@ SECRET=secret
 PORT=3005
 ```
 
-Run the Application in development mode :
+### Run the Application in development mode :
 
 ```bash
 $ git clone https://github.com/llanesleonardo/api-employees.git
@@ -267,7 +132,7 @@ $ npm start
 
 Run the aplication in debug mode in [Visual Studio Code](https://code.visualstudio.com/) :
 
-Create your Visual Studio Code config file .vscode/launch.json
+### Create your Visual Studio Code config file .vscode/launch.json
 
 ```JSON
 {
@@ -314,7 +179,7 @@ See : https://enlear.academy/integrating-prettier-and-eslint-with-vs-code-1d2f6f
 $ yarn add eslint eslint-config-prettier eslint-plugin-prettier prettier -D
 ```
 
-Create your .eslintrc file :
+### Create your .eslintrc file :
 
 ```json
 {
@@ -347,7 +212,7 @@ Create your .eslintrc file :
 }
 ```
 
-Create your .prettierrc file :
+### Create your .prettierrc file :
 
 ```json
 {
@@ -401,7 +266,7 @@ Create your .babelrc file :
 }
 ```
 
-## Jest
+### Jest
 
 See : https://jestjs.io/docs/getting-started
 
@@ -433,18 +298,6 @@ See : https://www.npmjs.com/package/chalk
 
 ```bash
 $ npm i chalk
-```
-
-### Mongoose
-
-Docs : https://mongoosejs.com/
-
-npm : https://www.npmjs.com/package/mongoose
-
-See : https://github.com/azat-co/cheatsheets/blob/master/mongodb-mongoose/readme.md
-
-```bash
-$ yarn add mongoose
 ```
 
 ### typeORM
