@@ -213,7 +213,7 @@ src/
 └── router.js
 └── .babelrc
 └── .prettierrc
-└── DcokerFile.dev
+└── Dockerfile.dev
 └── ormconfig.json
 ```
 
