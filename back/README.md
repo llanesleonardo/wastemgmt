@@ -115,10 +115,10 @@ A list of technologies used within the project:
 ### Create your .env file :
 
 ```
-MONGO_DB_HOST=localhost
-MONGO_DB_NAME=dbName
-MONGO_DB_USER=root
-MONGO_DB_PASSWORD=root
+MYSQL_HOST=localhost
+MYSQL_DB_NAME=dbName
+MYSQL_DB_USER=userName
+MYSQL_DB_PASSWORD=pass
 SECRET=secret
 PORT=3005
 ```
@@ -126,7 +126,7 @@ PORT=3005
 ### Run the Application in development mode :
 
 ```bash
-$ git clone https://github.com/llanesleonardo/api-employees.git
+$ git clonehttps://github.com/llanesleonardo/wastemgmt.git
 $ cd ../path/to/the/file
 $ npm
 $ npm start
