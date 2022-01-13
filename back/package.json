@@ -10,12 +10,16 @@
     "expressjs",
     "typeorm",
     "node",
-    "javascript"
+    "javascript",
+    "prettier",
+    "babel",
+    "lean",
+    "leanwaste"
   ],
   "author": "Leonardo Ernesto LLanes Hoyos",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/llanesleonardo/api-employees/issues"
+    "url": "https://github.com/llanesleonardo/wastemgmt/issues"
   },
   "dependencies": {
     "@babel/cli": "^7.16.7",
