@@ -601,6 +601,20 @@ export async function destroy(id) {
 
 ```js
 //ENTITY
+// EXAMPLE OF EMPLOYEES ENTITY
+
+@Entity()
+export class Employee {
+  @PrimaryGeneratedColumn()
+  id = undefined
+
+  @Column('varchar')
+  oneField = ''
+  @Column('varchar')
+  twoField = ''
+  @Column('varchar')
+  threeField = ''
+}
 ```
 
 # Refs :
