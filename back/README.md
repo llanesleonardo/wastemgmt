@@ -522,6 +522,81 @@ export async function destroy(req, res, next) {
 
 ```js
 //SERVICES
+//EXAMPLE OF EMPLOYEE SERVICE
+/**
+ * @getPhotoRepository get a specific repositor, similar to use a specific schema or table in the database
+ */
+
+/**
+ * @index fetch all documents
+ */
+
+export async function index() {
+  try {
+    return await getConnection().getRepository(Employee).find()
+  } catch (e) {
+    console.error(e.stack)
+  }
+}
+/**
+ * @show fetch only one document
+ * @param  {} id
+ */
+export async function show(id) {
+  try {
+    return await getConnection().getRepository(Employee).findOne(id)
+  } catch (e) {
+    console.error(e.stack)
+  }
+}
+/**
+ * @store crete a document an then save that document into db
+ * @param  {} payload
+ */
+export async function store( alot of fields) {
+  try {
+    const employee = new Employee()
+
+   employee. alot of fields =  alot of fields
+    // let photo = await getPhotoRepository().create(payload)
+    return await getConnection().getRepository(Employee).save(employee)
+  } catch (e) {
+    console.error(e.stack)
+  }
+}
+/**
+ * @update fetch one document, merge with the old same document and then save it into db
+ * @param  {} id
+ * @param  {} paypload
+ */
+export async function update(
+  alot of fields
+) {
+  try {
+    let employeeToUpdate = await getConnection()
+      .getRepository(Employee)
+      .findOne(id)
+    let payload = {
+ alot of fields
+    }
+    getRepository(Employee).merge(employeeToUpdate, payload)
+    return await getConnection().getRepository(Employee).save(employeeToUpdate)
+  } catch (e) {
+    console.error(e.stack)
+  }
+}
+
+/**
+ * @destroy delete a specific document in the db
+ * @param  {} id
+ */
+export async function destroy(id) {
+  try {
+    return await getConnection().getRepository(Employee).delete(id)
+  } catch (e) {
+    console.error(e.stack)
+  }
+}
 ```
 
 ```js
