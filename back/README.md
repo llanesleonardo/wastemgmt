@@ -7,9 +7,9 @@
   <p align="center">
     This is a dev repo using a typeORM with node.js
     <br>
-    <a href="https://github.com/llanesleonardo/api-empleados/issues">Report bug</a>
+    <a href="https://github.com/llanesleonardo/wastemgmt/issues">Report bug</a>
     ·
-    <a href="https://github.com/llanesleonardo/api-empleados/pulls">Request feature</a>
+    <a href="https://github.com/llanesleonardo/wastemgmt/pulls">Request feature</a>
     <br>
     Author 
     <br>
@@ -467,186 +467,13 @@ MySQL npm install mysql2 --save
 MongoDB npm install mongodb@^3.6.0 --save
 ```
 
-Basic CRUD Example :
-
-```js
-//ROUTES
-//EXAMPLE OF EMPLOYEES ROUTES
-router.get('/employees', employeesController.index)
-router.post('/employees', employeesController.store)
-router.get('/employees/:id', employeesController.show)
-router.put('/employees/:id', employeesController.update)
-router.delete('/employees/:id', employeesController.destroy)
-```
-
-```js
-//CONTROLLERS
-//EXAMPLE OF EMPLOYEE CONTROLLER
-
-import * as employeesServices from '@services/employees.services'
-
-/**
- * @param  {} req
- * @param  {} res
- * @param  {} next
- */
-
-export async function index(req, res, next) {
-  try {
-    const employees = await employeesServices.index() // call service and store the result in a constant variable
-    res.status(200).json(employees) // send status code and joson rresponse to the client
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-
-export async function store(req, res, next) {
-  try {
-    const {
-     alot of fields
-    } = req.body
-    const storedEmployee = await employeesServices.store( alot of fields  ) // call service and store the result in a constant variable
-    res.status(200).json(storedEmployee) // send status code and joson rresponse to the client
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-
-export async function show(req, res, next) {
-  try {
-    const employee = await employeesServices.show(req.params.id) // call service and store the result in a constant variable
-    res.status(200).json(employee) // send status code and joson rresponse to the client
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-
-export async function update(req, res, next) {
-  try {
-    const {
- alot of fields
-    } = req.body
-    const updatedEmployee = await employeesServices.update( alot of fields ) // call service and store the result in a constant variable
-    res.status(200).json(updatedEmployee) // send status code and joson rresponse to the client
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-
-export async function destroy(req, res, next) {
-  try {
-    const destroyedEmployee = await employeesServices.destroy(req.params.id) // call service and store the result in a constant variable
-    res.status(200).json(destroyedEmployee) // send status code and joson rresponse to the client
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-```
-
-```js
-//SERVICES
-//EXAMPLE OF EMPLOYEE SERVICE
-/**
- * @getPhotoRepository get a specific repositor, similar to use a specific schema or table in the database
- */
-
-/**
- * @index fetch all documents
- */
-
-export async function index() {
-  try {
-    return await getConnection().getRepository(Employee).find()
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-/**
- * @show fetch only one document
- * @param  {} id
- */
-export async function show(id) {
-  try {
-    return await getConnection().getRepository(Employee).findOne(id)
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-/**
- * @store crete a document an then save that document into db
- * @param  {} payload
- */
-export async function store( alot of fields) {
-  try {
-    const employee = new Employee()
-
-   employee. alot of fields =  alot of fields
-    // let photo = await getPhotoRepository().create(payload)
-    return await getConnection().getRepository(Employee).save(employee)
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-/**
- * @update fetch one document, merge with the old same document and then save it into db
- * @param  {} id
- * @param  {} paypload
- */
-export async function update(
-  alot of fields
-) {
-  try {
-    let employeeToUpdate = await getConnection()
-      .getRepository(Employee)
-      .findOne(id)
-    let payload = {
- alot of fields
-    }
-    getRepository(Employee).merge(employeeToUpdate, payload)
-    return await getConnection().getRepository(Employee).save(employeeToUpdate)
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-
-/**
- * @destroy delete a specific document in the db
- * @param  {} id
- */
-export async function destroy(id) {
-  try {
-    return await getConnection().getRepository(Employee).delete(id)
-  } catch (e) {
-    console.error(e.stack)
-  }
-}
-```
-
-```js
-//ENTITY
-// EXAMPLE OF EMPLOYEES ENTITY
-
-@Entity()
-export class Employee {
-  @PrimaryGeneratedColumn()
-  id = undefined
-
-  @Column('varchar')
-  oneField = ''
-  @Column('varchar')
-  twoField = ''
-  @Column('varchar')
-  threeField = ''
-}
-```
-
 # Refs :
 
 - https://github.com/alejandrogalaz21
 
 # Bugs and feature requests
 
-Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/llanesleonardo/api-employees/pulls) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/llanesleonardo/api-employees/issues).
+Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/llanesleonardo/wastemgmt/pulls) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/llanesleonardo/wastemgmt/issues).
 
 # [](https://github.com/pranavms13/whatsapp-node-api#legal)📃 Legal
 
