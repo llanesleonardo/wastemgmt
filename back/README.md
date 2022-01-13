@@ -50,6 +50,9 @@
 Project Structure :
 
 ```text
+public/
+├── uploads/
+├── index.js
 src/
 ├── config/
 │   └── env.js
