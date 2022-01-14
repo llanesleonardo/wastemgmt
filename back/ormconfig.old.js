@@ -11,13 +11,13 @@
  * @logging file that contains all the warnings, errors, queries, schema build process, info, logs
  */
 module.exports = {
-  type: "mysql",
-  host: process.env.MYSQL_HOST || "localhost",
+  type: 'mysql',
+  host: process.env.MYSQL_HOST || 'localhost',
   port: process.env.MYSQL_PORT || 3306,
-  username: process.env.MYSQL_USER || "root",
-  password: process.env.MYSQL_PASSWORD || "test123",
-  database: process.env.MYSQL_DATABASE || "apimysql",
-  entities: ["src/models/**/*.js"],
+  username: process.env.MYSQL_USER || 'root',
+  password: process.env.MYSQL_PASSWORD || 'test123',
+  database: process.env.MYSQL_DATABASE || 'wastemgmt',
+  entities: ['src/model/**/*.js'],
   synchronize: true,
-  logging: true,
-};
+  logging: true
+}

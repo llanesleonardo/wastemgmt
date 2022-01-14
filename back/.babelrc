@@ -15,7 +15,17 @@
         {
           "root": ["./src"],
           "alias": {
-            "@app": "./src/app.js"
+            "@app": "./src/app.js",
+            "@config": "./src/config",
+            "@router":"./src/router.js",
+            "@routes":"./src/routes",
+            "@controllers":"./src/controllers",
+            "@validations":"./src/validations",
+            "@middlewares":"./src/middlewares",
+            "@services":"./src/services",
+            "@entities":"./src/model",
+            "@helpers":"./src/helpers",
+            "@errors":"./src/errors"
           }
         }
       ]

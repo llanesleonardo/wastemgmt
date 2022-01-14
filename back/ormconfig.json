@@ -6,8 +6,8 @@
       "port": 3306 ,
       "username": "root" ,
       "password": "test123" ,
-      "database": "employees" ,
-      "entities": ["src/entity/**/*.js"],
+      "database": "wastemgmtdev" ,
+      "entities": ["src/model/**/*.js"],
       "synchronize": true,
       "logging": true
     },
@@ -18,8 +18,8 @@
       "port": 3306 ,
       "username": "root" ,
       "password": "test123" ,
-      "database": "employee_test" ,
-      "entities": ["src/entity/**/*.js"],
+      "database": "wastemgmttest" ,
+      "entities": ["src/model/**/*.js"],
       "synchronize": true,
       "dropSchema": true,
       "logging": false

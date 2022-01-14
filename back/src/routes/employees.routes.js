@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import * as employeesController from '@controllers/employees.controllers'
+import * as employeesController from '@controllers/employees.controller'
 import {
   postValidations,
   putValidations,
   dbValidations
-} from '@validations/actions.validations'
+} from '@validations/employees.validations'
 import { errorsValidation } from '@middlewares/errors.middlewares'
 
 const router = Router()
