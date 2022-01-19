@@ -3,6 +3,7 @@ import * as employeesController from '@controllers/employees.controller'
 import {
   postValidations,
   putValidations,
+  putUserIdValidation,
   dbValidations
 } from '@validations/employees.validations'
 import { errorsValidation } from '@middlewares/errors.middlewares'
@@ -37,12 +38,7 @@ router.post(
  * @param  {id"} "/employees/
  * @param  {} employeesController.show calling the show function in the employeesController file (fetch a document)
  */
-router.get(
-  '/employees/:id',
-  dbValidations,
-  errorsValidation,
-  employeesController.show
-)
+router.get('/employees/:id', errorsValidation, employeesController.show)
 /**
  * @param  {id"} "/employees/
  * @param  {} employeesController.update calling the update function in the employeesController file (update a document)
@@ -52,12 +48,24 @@ router.get(
 // that handles an inside function validationResult tha comes from express-validator and also handles the responses to the client with respondeFormat function interface
 router.put(
   '/employees/:id',
-  dbValidations,
   postValidations,
   putValidations,
   errorsValidation,
   employeesController.update
 )
+
+/**
+ * @param  {id"} "/employees/
+ * @param  {} employeesController.update calling the update function in the employeesController file (update a document)
+ */
+
+// this route has 2 middlewares and 1 controller - the validation(middleware) postValidations is an specific way to validate fields that comes form the client, the middleware errorsValidation is an specific function
+// that handles an inside function validationResult tha comes from express-validator and also handles the responses to the client with respondeFormat function interface
+router.put(
+  '/employees/:id/userId',
+  employeesController.updateEmployeeUserRelation
+)
+
 /**
  * @param  {id"} "/employees/
  * @param  {} employeesController.destroy calling the destroy function in the employeesController file (destroy a document)

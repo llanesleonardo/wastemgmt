@@ -3,14 +3,13 @@ import '@babel/polyfill' // This npm module import preset with a babel decorator
 import app from '@app' // // This npm module import the method app
 //import chalk from 'chalk' // This npm module import the method chalk
 import { getEnv } from '@config/env' // This custom module import the method getEnv
-import { createConnection } from 'typeorm' // This npm module import the method createConnection
+//import { createConnection } from 'typeorm' // This npm module import the method createConnection
 import { createTypeORMConnection } from '@config/connTypeORM'
 
 /**
  * @destructuring of the getEnv() function to get enviromental variables from .env file (this only works on development mode)
  */
-const { PORT_NODE, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD, MYSQL_PORT } =
-  getEnv()
+const { PORT_NODE } = getEnv()
 
 /**
  * @PORT variable that choose a value of a port depending on the enviroment

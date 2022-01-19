@@ -30,44 +30,23 @@ export const postValidations = [
     .isIn(badWords)
     .withMessage('field contains a bad word')
     .normalizeEmail(),
-  body('department')
+  body('creationDate')
     .exists()
     .withMessage('field not found')
     .notEmpty()
-    .withMessage('field is empty')
-    .isInt()
-    .withMessage('field is not an Number'),
-  body('position')
+    .withMessage('field is empty'),
+  body('modificationDate')
     .exists()
     .withMessage('field not found')
     .notEmpty()
-    .withMessage('field is empty')
-    .isInt()
-    .withMessage('field is not an Number'),
-  body('mobile')
-    .exists()
-    .withMessage('field not found')
-    .notEmpty()
-    .withMessage('field is empty')
-    .not()
-    .isIn(badWords)
-    .withMessage('field contains a bad word'),
+    .withMessage('field is empty'),
   body('active')
     .exists()
     .withMessage('field not found')
     .notEmpty()
     .withMessage('field is empty')
     .isInt()
-    .withMessage('field is not an Number'),
-  body('urlPhoto')
-    .exists()
-    .withMessage('field not found')
-    .notEmpty()
-    .withMessage('field is empty')
-    .isURL({ protocols: ['http', 'https', 'ftp'], require_host: true })
-    .not()
-    .isIn(badWords)
-    .withMessage('field contains a bad word')
+    .withMessage('field is not an Number')
 ]
 export const putValidations = [
   param('id')
@@ -75,15 +54,5 @@ export const putValidations = [
     .withMessage('field not found')
     .notEmpty()
     .withMessage('field is empty')
-]
-
-export const putUserIdValidation = [
-  body('userId')
-    .exists()
-    .withMessage('field not found')
-    .notEmpty()
-    .withMessage('field is empty')
-    .isInt()
-    .withMessage('field is not an Number')
 ]
 export const dbValidations = [isValidId]

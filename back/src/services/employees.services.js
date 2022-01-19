@@ -37,17 +37,18 @@ export async function show(id) {
  * @store crete a document an then save that document into db
  * @param  {} payload
  */
+
 export async function store(
   name,
   lastname,
   email,
   department,
+  area,
   position,
-  creationDate,
-  modificationDate,
   mobile,
   active,
-  urlPhoto
+  urlPhoto,
+  company
 ) {
   try {
     const employee = new Employee()
@@ -56,12 +57,16 @@ export async function store(
     employee.lastname = lastname
     employee.email = email
     employee.department = department
+    employee.area = area
     employee.position = position
-    employee.creationDate = creationDate
-    employee.modificationDate = modificationDate
+    employee.creationDate = new Date()
+    employee.modificationDate = new Date()
     employee.mobile = mobile
     employee.active = active
     employee.urlPhoto = urlPhoto
+    employee.isUser = 0
+    employee.company = company
+    employee.userId = null
     // let photo = await getPhotoRepository().create(payload)
     return await getConnection().getRepository(Employee).save(employee)
   } catch (e) {
@@ -79,30 +84,49 @@ export async function update(
   lastname,
   email,
   department,
+  area,
   position,
-  creationDate,
-  modificationDate,
   mobile,
   active,
-  urlPhoto
+  urlPhoto,
+  company
 ) {
   try {
     let employeeToUpdate = await getConnection()
       .getRepository(Employee)
       .findOne(id)
-    let payload = {
-      name,
-      lastname,
-      email,
-      department,
-      position,
-      creationDate,
-      modificationDate,
-      mobile,
-      active,
-      urlPhoto
-    }
-    getRepository(Employee).merge(employeeToUpdate, payload)
+
+    employeeToUpdate.name = name
+    employeeToUpdate.lastname = lastname
+    employeeToUpdate.email = email
+    employeeToUpdate.department = department
+    employeeToUpdate.area = area
+    employeeToUpdate.position = position
+    employeeToUpdate.modificationDate = new Date()
+    employeeToUpdate.mobile = mobile
+    employeeToUpdate.active = active
+    employeeToUpdate.urlPhoto = urlPhoto
+    employeeToUpdate.company = company
+
+    return await getConnection().getRepository(Employee).save(employeeToUpdate)
+  } catch (e) {
+    console.error(e.stack)
+  }
+}
+
+/**
+ * @update fetch one document, merge with the old same document and then save it into db
+ * @param  {} id
+ * @param  {} paypload
+ */
+export async function updateEmployeeUserRelation(id, userId) {
+  try {
+    let employeeToUpdate = await getConnection()
+      .getRepository(Employee)
+      .findOne(id)
+
+    employeeToUpdate.userId = userId
+    employeeToUpdate.isUser = 1
     return await getConnection().getRepository(Employee).save(employeeToUpdate)
   } catch (e) {
     console.error(e.stack)

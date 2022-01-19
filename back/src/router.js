@@ -1,5 +1,6 @@
 import { Router } from 'express' // this npm module import Router  to handle routes
 import employeesRoutes from '@routes/employees.routes' // this custom route import employeesRoutes to use photos specific logic
+import usersRoutes from '@routes/users.routes' // this custom route import employeesRoutes to use photos specific logic
 
 const router = Router() // create an instance of Router Express to handle all the routes of the apps
 
@@ -7,4 +8,5 @@ const router = Router() // create an instance of Router Express to handle all th
 router.get('/', (_, res) => res.sendFile('public', 'index.html')) // static routes to present html, css only files
 
 router.use('/api', [employeesRoutes]) // use the employeesRoutes if the url is: "for example" -> localhost:4000/api", it can be another route attached to this url like [employeesRoutes,otherRoutes]
+router.use('/api', [usersRoutes]) // use the usersRoutesRoutes if the url is: "for example" -> localhost:4000/api", it can be another route attached to this url like [usersRoutesRoutes,otherRoutes]
 export default router
