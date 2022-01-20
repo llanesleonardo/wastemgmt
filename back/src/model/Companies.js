@@ -7,32 +7,32 @@ import {
 } from 'typeorm'
 
 @Entity()
-export class User {
+export class Companies {
   @PrimaryGeneratedColumn()
   id = undefined
 
   @Column('varchar')
   name = ''
   @Column('varchar')
-  lastname = ''
-  @Column('varchar')
   email = ''
-  @Column('varchar')
-  username = ''
   @Column('int')
-  position = 0
+  active = 0
+  @Column('int')
+  status = 0
+  @Column('varchar')
+  address = ''
+  @Column('int')
+  city = 0
+  @Column('int')
+  state = 0
+  @Column('int')
+  country = 0
+  @Column('int')
+  numUsers = 0
   @Column('date')
   creationDate = ''
   @Column({ type: 'date', nullable: true })
   modificationDate = ''
-  @Column('int')
-  active = 0
-  @Column('int')
-  roles = 0
-  @Column('varchar')
-  jwt = ''
-  @Column('int')
-  confirmUser = 0
   @Column({ type: 'date', nullable: true })
   activationDate = null
 }
