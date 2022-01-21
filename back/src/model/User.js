@@ -20,12 +20,6 @@ export class User {
   @Column('varchar')
   username = ''
   @Column('int')
-  position = 0
-  @Column('date')
-  creationDate = ''
-  @Column({ type: 'date', nullable: true })
-  modificationDate = ''
-  @Column('int')
   active = 0
   @Column('int')
   roles = 0
@@ -33,6 +27,10 @@ export class User {
   jwt = ''
   @Column('int')
   confirmUser = 0
+  @Column('date')
+  creationDate = ''
   @Column({ type: 'date', nullable: true })
-  activationDate = null
+  modificationDate = ''
+  @Column({ type: 'date', nullable: true })
+  activationDate = ''
 }

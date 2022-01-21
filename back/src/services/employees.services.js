@@ -59,14 +59,14 @@ export async function store(
     employee.department = department
     employee.area = area
     employee.position = position
-    employee.creationDate = new Date()
-    employee.modificationDate = new Date()
     employee.mobile = mobile
     employee.active = active
     employee.urlPhoto = urlPhoto
     employee.isUser = 0
     employee.company = company
     employee.userId = null
+    employee.creationDate = new Date()
+    employee.modificationDate = new Date()
     // let photo = await getPhotoRepository().create(payload)
     return await getConnection().getRepository(Employee).save(employee)
   } catch (e) {
@@ -102,11 +102,11 @@ export async function update(
     employeeToUpdate.department = department
     employeeToUpdate.area = area
     employeeToUpdate.position = position
-    employeeToUpdate.modificationDate = new Date()
     employeeToUpdate.mobile = mobile
     employeeToUpdate.active = active
     employeeToUpdate.urlPhoto = urlPhoto
     employeeToUpdate.company = company
+    employeeToUpdate.modificationDate = new Date()
 
     return await getConnection().getRepository(Employee).save(employeeToUpdate)
   } catch (e) {

@@ -28,19 +28,7 @@ export async function show(id) {
  * @store crete a document an then save that document into db
  * @param  {} payload
  */
-export async function store(
-  name,
-  lastname,
-  email,
-  username,
-  creationDate,
-  modificationDate,
-  active,
-  roles,
-  jwt,
-  confirmUser,
-  activationDate
-) {
+export async function store(name, lastname, email, username, roles, jwt) {
   try {
     const user = new User()
 
@@ -48,13 +36,13 @@ export async function store(
     user.lastname = lastname
     user.email = email
     user.username = username
-    user.creationDate = creationDate
-    user.modificationDate = modificationDate
-    user.active = active
+    user.active = 0
     user.roles = roles
     user.jwt = jwt
-    user.confirmUser = confirmUser
-    user.activationDate = activationDate
+    user.confirmUser = 0
+    user.creationDate = new Date()
+    user.modificationDate = new Date()
+    user.activationDate = null
     // let photo = await getPhotoRepository().create(payload)
     return await getConnection().getRepository(User).save(user)
   } catch (e) {
@@ -73,8 +61,6 @@ export async function update(
   lastname,
   email,
   username,
-  creationDate,
-  modificationDate,
   active,
   roles,
   jwt,
@@ -83,20 +69,17 @@ export async function update(
 ) {
   try {
     let userToUpdate = await getConnection().getRepository(User).findOne(id)
-    let payload = {
-      name,
-      lastname,
-      email,
-      username,
-      creationDate,
-      modificationDate,
-      active,
-      roles,
-      jwt,
-      confirmUser,
-      activationDate
-    }
-    getRepository(User).merge(userToUpdate, payload)
+    userToUpdate.name = name
+    userToUpdate.lastname = lastname
+    userToUpdate.email = email
+    userToUpdate.username = username
+    userToUpdate.active = active
+    userToUpdate.roles = roles
+    userToUpdate.jwt = jwt
+    userToUpdate.confirmUser = confirmUser
+    userToUpdate.activationDate = activationDate
+    userToUpdate.modificationDate = new Date()
+    // let photo = await getPhotoRepository().create(payload)
     return await getConnection().getRepository(User).save(userToUpdate)
   } catch (e) {
     console.error(e.stack)

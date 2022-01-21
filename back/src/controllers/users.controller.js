@@ -17,31 +17,14 @@ export async function index(req, res, next) {
 
 export async function store(req, res, next) {
   try {
-    const {
-      name,
-      lastname,
-      email,
-      username,
-      creationDate,
-      modificationDate,
-      active,
-      roles,
-      jwt,
-      confirmUser,
-      activationDate
-    } = req.body
+    const { name, lastname, email, username, roles, jwt } = req.body
     const storedUser = await usersServices.store(
       name,
       lastname,
       email,
       username,
-      creationDate,
-      modificationDate,
-      active,
       roles,
-      jwt,
-      confirmUser,
-      activationDate
+      jwt
     ) // call service and store the result in a constant variable
     res.status(200).json(storedUser) // send status code and joson rresponse to the client
   } catch (e) {
@@ -65,8 +48,6 @@ export async function update(req, res, next) {
       lastname,
       email,
       username,
-      creationDate,
-      modificationDate,
       active,
       roles,
       jwt,
@@ -79,8 +60,6 @@ export async function update(req, res, next) {
       lastname,
       email,
       username,
-      creationDate,
-      modificationDate,
       active,
       roles,
       jwt,

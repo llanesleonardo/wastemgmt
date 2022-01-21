@@ -7,7 +7,7 @@ import {
 } from 'typeorm'
 
 @Entity()
-export class Companies {
+export class Company {
   @PrimaryGeneratedColumn()
   id = undefined
 

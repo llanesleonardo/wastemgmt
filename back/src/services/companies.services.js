@@ -1,5 +1,5 @@
 import { getRepository, getConnection } from 'typeorm'
-import { Company } from '@entities/Companies'
+import { Company } from '@entities/Company'
 /**
  * @getPhotoRepository get a specific repositor, similar to use a specific schema or table in the database
  */
@@ -55,7 +55,7 @@ export async function store(
     company.modificationDate = new Date()
     company.activationDate = null
     // let photo = await getPhotoRepository().create(payload)
-    return await getConnection().getRepository(Company).save(user)
+    return await getConnection().getRepository(Company).save(company)
   } catch (e) {
     console.error(e.stack)
   }
